@@ -27,7 +27,7 @@ const Nav = () => {
         <a
           href="/"
           className={`text-2xl font-bold flex items-center space-x-2 transition-all duration-300 ${
-            scrolled ? "text-gray-900" : "text-gray-200"
+            scrolled ? "text-gray-900" : "text-gray-900"
           }`}
         >
           <span>LOGO</span>
@@ -36,7 +36,7 @@ const Nav = () => {
         {/* Desktop Menu */}
         <div
           className={`hidden md:flex space-x-6 md:space-x-10 items-center font-medium transition-all duration-300 ${
-            scrolled ? "text-gray-700" : "text-gray-200"
+            scrolled ? "text-gray-700" : "text-gray-700"
           }`}
         >
           {["Home", "About", "Services", "Partners"].map((text, index) => (
@@ -61,7 +61,7 @@ const Nav = () => {
           aria-label="Open navigation menu"
           onClick={() => setMenuOpen(!menuOpen)}
           className={`md:hidden transition-all duration-300 ${
-            scrolled ? "text-gray-900" : "text-gray-200"
+            scrolled ? "text-gray-900" : "text-[#E11F26]"
           }`}
         >
           {menuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
@@ -69,21 +69,27 @@ const Nav = () => {
       </div>
 
       {/* Mobile Menu */}
-      {/* Mobile Menu */}
       {menuOpen && (
-        <div className="md:hidden bg-white border-t border-gray-200 py-2 divide-y divide-gray-200">
+        <div
+          className={`md:hidden bg-white h-[100vh] border-t border-gray-200 transition-all duration-500 overflow-hidden ${
+            menuOpen
+              ? "max-h-[500px] opacity-100 py-2"
+              : "max-h-0 opacity-0 py-0"
+          }`}
+        >
           {[
             { href: "/", label: "Home" },
             { href: "#about", label: "About" },
             { href: "#services", label: "Services" },
             { href: "#partners", label: "Partners" },
             { href: "#get-started", label: "Get Started" },
-          ].map((item, idx) => (
+          ].map((item, idx, array) => (
             <a
               key={idx}
               onClick={toogleMenu}
               href={item.href}
-              className="flex justify-between items-center py-3 px-4 hover:bg-gray-100 group"
+              className={`flex justify-between items-center py-3 px-4 hover:bg-gray-100 group 
+          ${idx !== array.length - 1 ? "border-b border-gray-200" : ""}`}
             >
               <span>{item.label}</span>
               <span className="opacity-0 group-hover:opacity-100 transform transition-opacity duration-200">
