@@ -1,7 +1,16 @@
+import Hero from "./components/Hero";
+import Navbar from "./components/Navbar";
+import ScrollToTop from "./components/ScrollToTop";
+
 const App = () => {
   return (
     <>
-      <h1 className="text-blue-400">Hello, world! This is a React</h1>
+      <ScrollToTop />
+      <div className="">
+        <Navbar />
+
+        <Hero />
+      </div>
     </>
   );
 };
