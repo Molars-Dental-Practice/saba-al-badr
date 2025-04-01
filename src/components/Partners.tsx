@@ -20,7 +20,7 @@ const Partners = () => {
   };
 
   return (
-    <section className="bg-gray-100 py-6 overflow-hidden">
+    <section className="bg-white-100 py-6 md:py-24 overflow-hidden">
       <div className="relative w-full overflow-hidden">
         <motion.div
           className="flex space-x-10"
@@ -45,8 +45,8 @@ const Partners = () => {
                 loading="lazy"
                 src={logo}
                 alt="Partner Logo"
-                width={100}
-                height={64}
+                width={140}
+                height={100}
                 className={`h-16 w-auto object-contain transition-opacity duration-300 ${
                   loadedImages.includes(idx) ? "opacity-100" : "opacity-0"
                 }`}

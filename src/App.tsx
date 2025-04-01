@@ -1,3 +1,4 @@
+import About from "./components/About";
 import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
 import Partners from "./components/Partners";
@@ -9,9 +10,9 @@ const App = () => {
       <ScrollToTop />
       <div className="">
         <Navbar />
-
         <Hero />
         <Partners />
+        <About />
       </div>
     </>
   );
