@@ -1,19 +1,23 @@
 import { motion } from "framer-motion";
 import { useState, useMemo } from "react";
+import molars from "../assets/partners/molars-dental-clinic-logo.png";
+import partner1 from "../assets/partners/1.png";
+import partner2 from "../assets/partners/2.png";
+import partner3 from "../assets/partners/3.png";
+import partner4 from "../assets/partners/4.png";
+import partner5 from "../assets/partners/5.png";
 
-const partners = [
-  "/logos/partner1.png",
-  "/logos/partner2.png",
-  "/logos/partner3.png",
-  "/logos/partner4.png",
-  "/logos/partner5.png",
-];
+const partners = [partner1, partner2, partner3, partner4, partner5];
 
+console.log(partners);
 const Partners = () => {
   const [loadedImages, setLoadedImages] = useState<number[]>([]);
 
   // prevent recalculating duplicatedLogos on every render
-  const duplicatedLogos = useMemo(() => [...partners, ...partners], [partners]);
+  const duplicatedLogos = useMemo(
+    () => [...partners, ...partners, ...partners, ...partners],
+    [partners]
+  );
 
   const handleImageLoad = (index: number) => {
     setLoadedImages((prev) => [...new Set([...prev, index % partners.length])]);
@@ -23,7 +27,7 @@ const Partners = () => {
     <section className="bg-white-100 py-6 md:py-24 overflow-hidden">
       <div className="relative w-full overflow-hidden">
         <motion.div
-          className="flex space-x-10"
+          className="flex w-full space-x-20"
           initial={{ x: 0 }}
           animate={{ x: "-50%" }}
           transition={{
@@ -34,10 +38,7 @@ const Partners = () => {
         >
           {/* Duplicate the logos to create a seamless loop */}
           {duplicatedLogos.map((logo, idx) => (
-            <div
-              key={idx}
-              className="h-16 w-auto flex items-center justify-center"
-            >
+            <div key={idx} className=" flex items-center justify-center w-auto">
               {!loadedImages.includes(idx % partners.length) && (
                 <div className="h-32 w-32 bg-gray-300 animate-pulse shadow-lg"></div>
               )}
@@ -45,10 +46,8 @@ const Partners = () => {
                 loading="lazy"
                 src={logo}
                 alt="Partner Logo"
-                width={140}
-                height={100}
-                className={`h-16 shadow-lg w-auto object-contain transition-opacity duration-300 ${
-                  loadedImages.includes(idx) ? "opacity-100" : "opacity-0"
+                className={` object-cover max-w-[250px] h-20 transition-opacity duration-300 ${
+                  loadedImages.includes(idx) ? "opacity-100" : "opacity-100"
                 }`}
                 onLoad={() => handleImageLoad(idx)}
               />

@@ -5,32 +5,44 @@ import dental_supplies_categories from "../assets/dental-supplies-categories.png
 const categories = [
   {
     title: "Dental Instruments",
-    description: "Precision-crafted tools for accurate procedures.",
-    icon: <FaBox className="text-4xl text-[#31a5dd] mb-4" />,
+    descriptions: ["Precision-crafted tools for accurate procedures."],
+    icon: <FaBox className="text-4xl  mb-4" />,
   },
   {
     title: "Consumables",
-    description:
-      "Gloves, masks, sterilization pouches, and infection control products.",
-    icon: <FaGears className="text-4xl text-[#31a5dd] mb-4" />,
+    descriptions: [
+      "Gloves & masks",
+      "Sterilization pouches",
+      "Infection control products",
+    ],
+    icon: <FaGears className="text-4xl  mb-4" />,
   },
   {
     title: "Restorative Materials",
-    description:
-      "High-quality fillings, cements, composites, and bonding agents.",
-    icon: <FaStethoscope className="text-4xl text-[#31a5dd] mb-4" />,
+    descriptions: [
+      "High-quality fillings",
+      "Cements & composites",
+      "Bonding agents",
+    ],
+    icon: <FaStethoscope className="text-4xl  mb-4" />,
   },
   {
     title: "Orthodontics",
-    description:
-      "Brackets, wires, elastics, and adhesives for corrective treatments.",
-    icon: <FaMedkit className="text-4xl text-[#31a5dd] mb-4" />,
+    descriptions: [
+      "Brackets & wires",
+      "Elastics",
+      "Adhesives for corrective treatments",
+    ],
+    icon: <FaMedkit className="text-4xl mb-4" />,
   },
   {
     title: "Surgical Supplies",
-    description:
-      "Sterile surgical kits, extraction forceps, and implant tools.",
-    icon: <FaTag className="text-4xl text-[#31a5dd] mb-4" />,
+    descriptions: [
+      "Sterile surgical kits",
+      "Extraction forceps",
+      "Implant tools",
+    ],
+    icon: <FaTag className="text-4xl  mb-4" />,
   },
 ];
 
@@ -59,18 +71,22 @@ const ProductCategories = () => {
           Categories We Offer:
         </h3>
 
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-10">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 ">
           {/* Loop over the categories and display them */}
           {categories.map((category, index) => (
             <div
               key={index}
-              className="bg-white shadow-lg rounded-xl p-5 xl:p-8 text-left border border-gray-200"
+              className="bg-white shadow-lg rounded-xl p-5 xl:p-8 text-left border text-gray-700 border-gray-200 hover:bg-[#31a5dd] cursor-pointer hover:text-white transition duration-300 group"
             >
-              {category.icon}
-              <h4 className="text-xl font-semibold text-gray-900 mb-2">
-                {category.title}
-              </h4>
-              <p className="text-gray-700">{category.description}</p>
+              <span className="text-[#31a5dd] group-hover:text-white transition duration-300">
+                {category.icon}
+              </span>
+              <h4 className="text-xl font-semibold mb-2">{category.title}</h4>
+              <ul className="list-disc list-inside">
+                {category.descriptions.map((desc, idx) => (
+                  <li key={idx}>{desc}</li>
+                ))}
+              </ul>
             </div>
           ))}
         </div>
