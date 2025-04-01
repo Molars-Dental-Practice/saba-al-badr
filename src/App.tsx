@@ -1,5 +1,6 @@
 import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
+import Partners from "./components/Partners";
 import ScrollToTop from "./components/ScrollToTop";
 
 const App = () => {
@@ -10,6 +11,7 @@ const App = () => {
         <Navbar />
 
         <Hero />
+        <Partners />
       </div>
     </>
   );
