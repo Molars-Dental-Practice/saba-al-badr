@@ -39,7 +39,7 @@ const Partners = () => {
               className="h-16 w-auto flex items-center justify-center"
             >
               {!loadedImages.includes(idx % partners.length) && (
-                <div className="h-20 w-32 bg-gray-300 animate-pulse"></div>
+                <div className="h-32 w-32 bg-gray-300 animate-pulse shadow-lg"></div>
               )}
               <img
                 loading="lazy"
@@ -47,7 +47,7 @@ const Partners = () => {
                 alt="Partner Logo"
                 width={140}
                 height={100}
-                className={`h-16 w-auto object-contain transition-opacity duration-300 ${
+                className={`h-16 shadow-lg w-auto object-contain transition-opacity duration-300 ${
                   loadedImages.includes(idx) ? "opacity-100" : "opacity-0"
                 }`}
                 onLoad={() => handleImageLoad(idx)}

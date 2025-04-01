@@ -10,7 +10,7 @@ const About = () => {
         <div className="lg:flex lg:items-center lg:space-x-12 relative w-full">
           {/* Text Section */}
           <div className=" flex items-center relative z-10 w-[95%] lg:w-[180vw]">
-            <div className="bg-white shadow-lg rounded-xl p-8">
+            <div className="bg-white shadow-lg rounded-xl p-4 md:p-8">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
                 About Us – Who We Are
               </h2>
