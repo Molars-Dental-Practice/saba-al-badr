@@ -50,7 +50,7 @@ const Nav = () => {
             </div>
           ))}
           <a href="#get-started">
-            <button className="bg-[#E11F26] text-white px-4 py-2 rounded-md hover:bg-[#1e8bbd] transition duration-300 cursor-pointer">
+            <button className="bg-[#E11F26] text-white px-5 py-2 rounded-md hover:bg-[#1e8bbd] transition duration-300 cursor-pointer">
               Get Started
             </button>
           </a>

@@ -1,11 +1,12 @@
-// import bgImage from "../assets/saba-al-badr.webp";
-
-// style = {{ backgroundImage: `url(${bgImage})` }}
+import bgImage from "../assets/saba-al-badr-hero.webp";
 
 const Hero = () => {
   return (
-    <section className="relative bg-[#31a5dd] bg-cover bg-center md:min-h-[70vh] flex items-center px-5 md:px-12 lg:px-20  py-40">
-      <div className="absolute inset-0 bg-gradient-to-br from-transparent via-white/90 to-white/90"></div>
+    <section
+      className="relative bg-cover bg-center md:min-h-[70vh] flex items-center px-5 md:px-12 lg:px-20  py-40"
+      style={{ backgroundImage: `url(${bgImage})` }}
+    >
+      <div className="absolute inset-0 bg-gradient-to-br from-white via-white/80 to-transparent"></div>
       <span className="max-w-[1440px] mx-auto w-full">
         <div className="relative max-w-2xl text-gray-900 z-10">
           <h1 className="text-3xl md:text-5xl font-bold leading-tight">
