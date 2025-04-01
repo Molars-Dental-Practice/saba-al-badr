@@ -91,11 +91,10 @@ const ProductCategories = () => {
           ))}
         </div>
 
-        {/* Call to Action: Request a Quote */}
         <div className="mt-6">
           <a
             href="#"
-            className="inline-block bg-[#E11F26] text-white font-semibold py-3 px-8 rounded-md hover:bg-[#c45f63] transition"
+            className="inline-block bg-[#E11F26] text-white font-semibold py-3 px-8 rounded-md hover:bg-[#31a5dd] transition"
           >
             Request a Quote for Bulk Orders
           </a>
