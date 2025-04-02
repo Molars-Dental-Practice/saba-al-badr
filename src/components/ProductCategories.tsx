@@ -54,6 +54,7 @@ const ProductCategories = () => {
 
   return (
     <section
+      id="categories"
       className="bg-gray-100 py-16 px-5 relative"
       style={{
         backgroundImage: `url(${dental_supplies_categories})`,

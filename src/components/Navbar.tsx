@@ -44,7 +44,7 @@ const Nav = () => {
             scrolled ? "text-gray-700" : "text-gray-700"
           }`}
         >
-          {["Home", "About", "Services", "Partners"].map((text, index) => (
+          {["Home", "About", "Categories", "Partners"].map((text, index) => (
             <div key={index} className="relative group">
               <a
                 href={`#${text.toLowerCase()}`}

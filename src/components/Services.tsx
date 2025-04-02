@@ -3,7 +3,7 @@ import { FaTruck, FaTools, FaHeadset } from "react-icons/fa";
 
 const Services = () => {
   return (
-    <section className="bg-white py-24 px-5">
+    <section className="bg-white py-24 px-5" id="categories">
       <div className="max-w-[1440px] mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-10">
           Our Services

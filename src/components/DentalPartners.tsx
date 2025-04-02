@@ -24,7 +24,7 @@ const DentalPartners = () => {
   ];
 
   return (
-    <section className="max-w-6xl mx-auto px-6 py-16">
+    <section className="max-w-6xl mx-auto px-6 py-16" id="partners">
       <h2 className="text-3xl font-bold text-gray-900 text-center mb-6">
         Our Partners – Global Leaders in Dental Manufacturing
       </h2>

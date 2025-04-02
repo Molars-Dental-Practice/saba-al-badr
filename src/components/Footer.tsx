@@ -6,7 +6,9 @@ const Footer = () => {
       <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
         {/* Left Section - Logo & Links */}
         <div>
-          <h2 className="text-2xl font-bold text-white mb-4">Saba Al Badr</h2>
+          <h2 className="text-2xl font-bold text-white mb-4 footer-logo">
+            Saba Al Badr.
+          </h2>
           <ul className="space-y-2">
             <li>
               <a href="#" className="hover:text-white">

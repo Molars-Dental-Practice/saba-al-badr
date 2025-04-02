@@ -8,7 +8,7 @@ const Hero = () => {
 
   return (
     <section
-      className="relative bg-cover bg-bottom md:min-h-[70vh] flex items-center px-5 md:px-12 lg:px-20  py-40"
+      className="relative bg-cover bg-bottom md:min-h-[70vh] flex items-center px-5 md:px-12 lg:px-20  py-40" id="home"
       style={{ backgroundImage: `url(${bgImage})` }}
     >
       <div className="absolute inset-0 bg-gradient-to-br from-white via-white/80 to-transparent"></div>

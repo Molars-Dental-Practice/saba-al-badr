@@ -4,7 +4,7 @@ import mission from "../assets/mission.webp";
 
 const About = () => {
   return (
-    <section className="relative bg-gray-100 py-24 px-5 lg:px-20">
+    <section className="relative bg-gray-100 py-24 px-5 lg:px-20" >
       <div className="max-w-[1440px] mx-auto">
         {/* About Us Section */}
         <div className="lg:flex lg:items-center lg:space-x-12 relative w-full">

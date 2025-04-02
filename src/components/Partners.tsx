@@ -44,7 +44,7 @@ const Partners = () => {
   }, [controls, partners.length]);
 
   return (
-    <section className="bg-white-100 py-6 md:py-24 overflow-hidden">
+    <section className="bg-white-100 py-6 md:py-24 overflow-hidden" id="about">
       <div className="relative w-full overflow-hidden">
         <motion.div
           className="flex w-full space-x-20"
