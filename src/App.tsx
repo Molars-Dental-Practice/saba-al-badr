@@ -1,4 +1,6 @@
 import About from "./components/About";
+import DentalPartners from "./components/DentalPartners";
+import Footer from "./components/Footer";
 import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
 import Partners from "./components/Partners";
@@ -19,6 +21,8 @@ const App = () => {
         {/* <Services /> */}
         <ProductCategories />
         <WhyChooseUs />
+        <DentalPartners />
+        <Footer />
       </div>
     </>
   );
