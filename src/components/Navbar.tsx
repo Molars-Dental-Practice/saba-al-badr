@@ -1,10 +1,12 @@
 "use client";
 import { useState, useEffect } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
+import PopupForm from "./PopupForm";
 
 const Nav = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [formOpen, setFormOpen] = useState(false);
 
   const toogleMenu = () => setMenuOpen(!menuOpen);
 
@@ -50,7 +52,10 @@ const Nav = () => {
             </div>
           ))}
           <a href="#get-started">
-            <button className="bg-[#E11F26] text-white px-5 py-2 rounded-md hover:bg-[#1e8bbd] transition duration-300 cursor-pointer">
+            <button
+              onClick={() => setFormOpen(true)}
+              className="bg-[#E11F26] text-white px-5 py-2 rounded-md hover:bg-[#1e8bbd] transition duration-300 cursor-pointer"
+            >
               Get Started
             </button>
           </a>
@@ -99,6 +104,8 @@ const Nav = () => {
           ))}
         </div>
       )}
+
+      <PopupForm isOpen={formOpen} onClose={() => setFormOpen(false)} />
     </nav>
   );
 };
