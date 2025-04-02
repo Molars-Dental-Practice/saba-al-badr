@@ -12,6 +12,39 @@ const PopupForm = ({
   typeForm: "partner" | "quote";
 }) => {
   const [formType, setFormType] = useState<"partner" | "quote">(typeForm);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    companyName: "",
+    productInquiry: "",
+  });
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    // Simulate form submission
+    setTimeout(() => {
+      setIsSubmitting(false);
+      setFormData({
+        name: "",
+        email: "",
+        companyName: "",
+        productInquiry: "",
+      });
+      alert("Form submitted successfully!");
+
+      onClose();
+    }, 2000);
+  };
 
   if (!isOpen) return null;
 
@@ -69,7 +102,7 @@ const PopupForm = ({
           </div>
 
           {/* Forms */}
-          <form className="space-y-4">
+          <form className="space-y-4" onSubmit={handleSubmit}>
             <div>
               <label className="block text-gray-700 font-medium">
                 Full Name
@@ -78,6 +111,10 @@ const PopupForm = ({
                 type="text"
                 className="w-full border border-gray-300 rounded-lg p-3 mt-1 focus:ring-[#E11F26] focus:border-[#E11F26] focus:outline-none"
                 placeholder="Enter your full name"
+                onChange={handleInputChange}
+                name="name"
+                value={formData.name}
+                required
               />
             </div>
 
@@ -89,6 +126,10 @@ const PopupForm = ({
                 type="email"
                 className="w-full border border-gray-300 rounded-lg p-3 mt-1 focus:ring-[#E11F26] focus:border-[#E11F26] focus:outline-none"
                 placeholder="Enter your email"
+                onChange={handleInputChange}
+                name="email"
+                value={formData.email}
+                required
               />
             </div>
 
@@ -101,6 +142,9 @@ const PopupForm = ({
                   type="text"
                   className="w-full border border-gray-300 rounded-lg p-3 mt-1 focus:ring-[#E11F26] focus:border-[#E11F26] focus:outline-none"
                   placeholder="Enter your company name"
+                  onChange={handleInputChange}
+                  name="companyName"
+                  value={formData.companyName}
                 />
               </div>
             ) : (
@@ -109,6 +153,9 @@ const PopupForm = ({
                   Product Inquiry
                 </label>
                 <textarea
+                  name="productInquiry"
+                  onChange={handleInputChange}
+                  value={formData.productInquiry}
                   className="w-full border border-gray-300 rounded-lg p-3 mt-1 focus:ring-[#E11F26] focus:border-[#E11F26] focus:outline-none"
                   placeholder="Specify the products you need"
                   rows={3}
@@ -117,12 +164,36 @@ const PopupForm = ({
             )}
 
             <button
+              disabled={isSubmitting}
               type="submit"
               className="w-full bg-[#E11F26] text-white py-3 rounded-lg font-medium hover:bg-[#c45f63] transition"
             >
               {formType === "partner"
                 ? "Submit Partnership Request"
                 : "Get a Quote"}
+              {/* spining loader */}
+              {isSubmitting && (
+                <svg
+                  className="animate-spin h-5 w-5 text-white inline-block ml-2"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <circle cx="12" cy="12" r="10" />
+                  <line x1="12" y1="2" x2="12" y2="6" />
+                  <line x1="12" y1="18" x2="12" y2="22" />
+                  <line x1="2" y1="12" x2="6" y2="12" />
+                  <line x1="18" y1="12" x2="22" y2="12" />
+                  <line x1="4.22" y1="4.22" x2="7.76" y2="7.76" />
+                  <line x1="16.24" y1="16.24" x2="19.78" y2="19.78" />
+                  <line x1="4.22" y1="19.78" x2="7.76" y2="16.24" />
+                  <line x1="16.24" y1="7.76" x2="19.78" y2="4.22" />
+                </svg>
+              )}
             </button>
           </form>
         </motion.div>
