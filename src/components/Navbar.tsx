@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 import PopupForm from "./PopupForm";
+import logo from "../assets/logo.png";
 
 const Nav = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -32,7 +33,9 @@ const Nav = () => {
             scrolled ? "text-gray-900" : "text-gray-900"
           }`}
         >
-          <span>LOGO</span>
+          <span>
+            <img src={logo} alt="Logo" className="h-full w-full" />
+          </span>
         </a>
 
         {/* Desktop Menu */}
@@ -105,7 +108,11 @@ const Nav = () => {
         </div>
       )}
 
-      <PopupForm isOpen={formOpen} onClose={() => setFormOpen(false)} />
+      <PopupForm
+        typeForm="quote"
+        isOpen={formOpen}
+        onClose={() => setFormOpen(false)}
+      />
     </nav>
   );
 };

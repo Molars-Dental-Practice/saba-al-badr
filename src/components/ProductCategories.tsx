@@ -1,6 +1,8 @@
 import { FaBox, FaStethoscope, FaMedkit, FaTag } from "react-icons/fa";
 import { FaGears } from "react-icons/fa6";
 import dental_supplies_categories from "../assets/dental-supplies-categories.png";
+import { useState } from "react";
+import PopupForm from "./PopupForm";
 
 const categories = [
   {
@@ -47,6 +49,9 @@ const categories = [
 ];
 
 const ProductCategories = () => {
+  const [formOpen, setFormOpen] = useState(false);
+  const [formType, setFormType] = useState<"partner" | "quote">("partner");
+
   return (
     <section
       className="bg-gray-100 py-16 px-5 relative"
@@ -92,14 +97,23 @@ const ProductCategories = () => {
         </div>
 
         <div className="mt-6">
-          <a
-            href="#"
+          <button
+            onClick={() => {
+              setFormType("quote");
+              setFormOpen(true);
+            }}
             className="inline-block bg-[#E11F26] text-white font-semibold py-3 px-8 rounded-md hover:bg-[#31a5dd] transition"
           >
             Request a Quote for Bulk Orders
-          </a>
+          </button>
         </div>
       </div>
+
+      <PopupForm
+        isOpen={formOpen}
+        onClose={() => setFormOpen(false)}
+        typeForm={formType}
+      />
     </section>
   );
 };

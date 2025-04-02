@@ -5,11 +5,13 @@ import { FiX } from "react-icons/fi";
 const PopupForm = ({
   isOpen,
   onClose,
+  typeForm,
 }: {
   isOpen: boolean;
   onClose: () => void;
+  typeForm: "partner" | "quote";
 }) => {
-  const [formType, setFormType] = useState<"partner" | "quote">("partner");
+  const [formType, setFormType] = useState<"partner" | "quote">(typeForm);
 
   if (!isOpen) return null;
 

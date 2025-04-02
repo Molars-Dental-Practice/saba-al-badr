@@ -1,6 +1,11 @@
 import bgImage from "../assets/saba-al-badr-hero.webp";
+import PopupForm from "./PopupForm";
+import { useState } from "react";
 
 const Hero = () => {
+  const [formOpen, setFormOpen] = useState(false);
+  const [formType, setFormType] = useState<"partner" | "quote">("partner");
+
   return (
     <section
       className="relative bg-cover bg-bottom md:min-h-[70vh] flex items-center px-5 md:px-12 lg:px-20  py-40"
@@ -18,21 +23,33 @@ const Hero = () => {
             across the region.
           </p>
           <div className="mt-6 flex gap-4 flex-col sm:flex-row text-center">
-            <a
-              href="#contact"
-              className="bg-[#E11F26] text-white px-6 py-3 rounded-md text-lg font-medium hover:bg-[#1e8bbd] transition"
+            <button
+              onClick={() => {
+                setFormType("partner");
+                setFormOpen(true);
+              }}
+              className="bg-[#E11F26] text-white px-6 py-3 rounded-md text-lg font-medium hover:bg-[#1e8bbd] transition cursor-pointer"
             >
               Partner With Us
-            </a>
-            <a
-              href="#quote"
-              className="bg-white text-gray-900 border border-gray-300 px-6 py-3 rounded-md text-lg font-medium hover:bg-gray-100 transition"
+            </button>
+            <button
+              onClick={() => {
+                setFormType("quote");
+                setFormOpen(true);
+              }}
+              className="bg-white text-gray-900 border border-gray-300 px-6 py-3 rounded-md text-lg font-medium hover:bg-gray-100 transition cursor-pointer"
             >
               Request a Quote
-            </a>
+            </button>
           </div>
         </div>
       </span>
+      {/* show form */}
+      <PopupForm
+        isOpen={formOpen}
+        onClose={() => setFormOpen(false)}
+        typeForm={formType}
+      />
     </section>
   );
 };

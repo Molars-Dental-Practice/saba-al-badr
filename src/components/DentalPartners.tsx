@@ -1,6 +1,11 @@
 import { FaCheckCircle } from "react-icons/fa";
+import { useState } from "react";
+import PopupForm from "./PopupForm";
 
 const DentalPartners = () => {
+  const [formOpen, setFormOpen] = useState(false);
+  const [formType, setFormType] = useState<"partner" | "quote">("partner");
+
   const partners = [
     "3M Dental",
     "Dentsply Sirona",
@@ -45,13 +50,22 @@ const DentalPartners = () => {
 
       {/* Call to Action */}
       <div className="mt-8 text-center">
-        <a
-          href="#"
+        <button
+          onClick={() => {
+            setFormType("partner");
+            setFormOpen(true);
+          }}
           className="bg-[#E11F26] text-white font-semibold py-3 px-6 rounded-md hover:bg-[#c45f63] transition"
         >
           Partner With Us
-        </a>
+        </button>
       </div>
+
+      <PopupForm
+        isOpen={formOpen}
+        onClose={() => setFormOpen(false)}
+        typeForm={formType}
+      />
     </section>
   );
 };
