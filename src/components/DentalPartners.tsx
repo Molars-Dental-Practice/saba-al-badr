@@ -70,12 +70,12 @@ const DentalPartners = () => {
       </p>
 
       {/* List of Partners */}
-      <div className="bg-white shadow-lg rounded-lg p-8">
+      <div className="bg-white shadow-lg rounded-lg p-4">
         <ul className="grid  md:grid-cols-4 lg:grid-cols-5 gap-4 text-gray-900 text-lg font-medium">
           {partners.map((partner, index) => (
             <li
               key={index}
-              className="flex items-center space-x-3 p-3 border-b md:border-none"
+              className="flex items-center space-x-3 p-2 border-b md:border-none"
             >
               <FaCheckCircle className="text-green-500 text-xl" />
               <span>{partner}</span>
