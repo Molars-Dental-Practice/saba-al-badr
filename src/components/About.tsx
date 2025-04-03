@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
 import { FaCheckCircle, FaLeaf, FaLightbulb } from "react-icons/fa";
-import mission from "../assets/mission.webp";
+import about from "../assets/about.webp";
 
 const About = () => {
   return (
-    <section className="relative bg-gray-100 py-24 px-5 lg:px-20" >
+    <section className="relative bg-gray-100 py-24 px-5 lg:px-20">
       <div className="max-w-[1440px] mx-auto">
         {/* About Us Section */}
         <div className="lg:flex lg:items-center lg:space-x-12 relative w-full">
@@ -29,10 +29,10 @@ const About = () => {
           {/* Image Section */}
           <div className=" w-full">
             <img
-              src={mission}
+              src={about}
               loading="lazy"
               alt="Mission"
-              className=" absolute  -top-8 left-1/2 w-[50%] h-90 lg:h-75 object-cover rounded-lg shadow-lg"
+              className=" absolute  -top-8 left-1/2 w-[50%] h-90 lg:h-75 object-cover rounded-lg shadow-lg border border-[#31a5dd]"
             />
           </div>
         </div>
